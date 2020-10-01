@@ -5,4 +5,4 @@ certbot certonly --noninteractive --agree-tos --domains sag.maple.rs --email adm
 certbot certonly --noninteractive --agree-tos --domains jonathan.li --email webmaster@renderjon.li --nginx
 certbot certonly --noninteractive --agree-tos --domains mqinternalmartialart.com --email webmaster@renderjon.li --nginx
 
-cp /etc/letsencrypt/live/* /opt/app/certs/
+cp -r /etc/letsencrypt/live/* /opt/app/certs/

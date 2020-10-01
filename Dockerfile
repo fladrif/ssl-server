@@ -13,7 +13,8 @@ RUN apt-get update -y && apt-get install -y \
   libssl-dev \
   zlib1g \
   zlib1g-dev \
-  yasm \ libx264-dev
+  yasm \
+  libx264-dev
 
 RUN curl https://nginx.org/download/nginx-1.16.0.tar.gz > nginx.tar.gz && \
   tar -xvzf nginx.tar.gz && \
