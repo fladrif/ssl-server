@@ -1,4 +1,4 @@
-FROM debian:stretch-slim as build
+FROM debian:buster-slim as build
 
 WORKDIR /opt/app
 
@@ -25,9 +25,11 @@ RUN curl https://nginx.org/download/nginx-1.16.0.tar.gz > nginx.tar.gz && \
   make && \
   make install
 
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
 WORKDIR /opt/app
+
+RUN apt-get update -y && apt-get install -y libssl-dev
 
 COPY --from=build /opt/app/nginx-1.16.0/objs/nginx /usr/local/bin/nginx
 
