@@ -36,4 +36,6 @@ COPY --from=build /opt/app/nginx-1.16.0/objs/nginx /usr/local/bin/nginx
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
 COPY start.sh start.sh
 
+RUN mkdir -p /usr/local/nginx/logs
+
 CMD ["./start.sh"]
