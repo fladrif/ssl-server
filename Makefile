@@ -1,6 +1,6 @@
 start: stop
 	docker build -t sentinel_server .
-	docker run -d --rm --name sentinel_server -p 80:80 -p 443:443 -v /home/ubuntu/letsencrypt/:/opt/app/letsencrypt/ sentinel_server
+	docker run -d --rm --name sentinel_server --network host -v /home/ubuntu/letsencrypt/:/opt/app/letsencrypt/ sentinel_server
 
 stop:
 	docker stop sentinel_server || true
